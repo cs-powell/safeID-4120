@@ -1,0 +1,51 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: linear-gradient(#f0f0f0, #e0e0e0);
+}
+
+#header {
+    color: #1B040B;
+}
+
+.darkcomponent {
+    color: #1B040B;
+}
+
+.icon {
+    width: 100;
+}
+
+.placeholder {
+    color: #D6183B;
+}
+
+#edit-trip {
+    outline: 5px double #1B040B;
+    outline-offset: 5px;
+}
+
+#rest-ID {
+    color: #077386;
+    outline: 5px double #077386;
+    outline-offset: 5px;
+}
+
+#med-ID {
+    color: #8C0428;
+    outline: 5px double #8C0428;
+    outline-offset: 5px;
+}
+
+#get-help {
+    color: #1B040B;
+    outline: 5px double #1B040B;
+    outline-offset: 5px;
+}
+
+.bottom-text {
+    color:#8C0428;
+}
+
+
+
+
