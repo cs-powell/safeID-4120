@@ -1,73 +1,3 @@
-<!-- <html>
-    <head>
-        <link rel="stylesheet" href="styles.css" />
-    </head>
-    <body>
-        <div id="header">
-            <h1>SafeID</h1>
-            <hr class="darkcomponent">
-        </div>
-
-        <div id = "page links">
-            <a href="id.html">ID Page</a>
-
-        </div>
-
-
-        <div id="loc-lang" class="darkcomponent">
-            <h2>Location</h2>
-            <h3 class="placeholder">loc</h3>
-            <h2>Language</h2>
-            <h3 class="placeholder">lang</h3>
-        </div>
-
-        <div id="edit-trip">
-            <img src="imgs/Trip-Info-Dark.png" class="icon"/>
-            <h2>Edit My Trip</h2>
-        </div>
-
-        <br/>
-
-        <div id="rest-ID">
-            <img src="imgs/Rest-ID-Turquoise.png" class="icon" />
-            <img src="imgs/Rest-ID-Red.png" class="icon" />
-            <h2>View My Restaurant ID</h2>
-        </div>
-
-        <br/>
-
-        <div id="med-ID">
-            <img src="imgs/Med-ID-Red.png" class="icon" />
-            <h2>View My Full Medical ID</h2>
-        </div>
-
-        <br/>
-
-        <div id="get-help">
-            <img src="imgs/Phone-Dark.png" class="icon" />
-            <h2>Get Help</h2>
-            <h3>9-1-1 in this country:</h3>
-        </div>
-
-        <br/>
-
-        <div id="nav-bar">
-            <hr/>
-            <img src="imgs/My-Info-Dark.png" class="icon" />
-            <img src="imgs/My-Info-Red.png" class="icon" />
-            <p class="bottom-text">My Info</p>
-            <img src="imgs/Home-Dark.png" class="icon" />
-            <img src="imgs/Home-Red.png" class="icon" />
-            <p class="bottom-text">Home</p>
-            <img src="imgs/More-Menu-Dark.png" class="icon" />
-            <img src="imgs/More-Menu-Red.png" class="icon" />
-            <p class="bottom-text">More</p>
-        </div>
-    </body>
-</html> -->
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -77,80 +7,75 @@
             margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4; /* Reverted back to the light background */
+            background-color: #f4f4f4; /* Light background for the overall page */
             overflow: hidden;
         }
         .phone-container {
             width: 350px;
             height: 700px;
-            border: 1px solid #ccc;
             border-radius: 10px;
-            /* background-color: #003366; Consistent with phone screen background */
+            background-color: #000; /* Black background for the phone screen */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             position: fixed;
             top: 20px;
             left: 20px;
             overflow: auto;
-            color: #fff; /* White text color for better contrast */
+            color: #ccc; /* Light gray text for better contrast */
         }
         .header {
-            background-color: #007bff;
-            color: #fff;
-            padding: 1px;
-            text-align: left;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
+            background-color: #1a1a1a; /* Darker gray for the header */
+            color: #ccc; /* Light gray text to match the theme */
+            padding: 10px;
             font-size: 18px;
-            padding-left: 10px;
         }
         .menu-item {
             display: flex;
             align-items: center;
+            justify-content: center;
             padding: 15px;
             margin: 10px;
-            border-radius: 15px; /* Rounded corners like app tiles */
-            background-color: #66b2ff; /* Much lighter blue for the tiles */
-            color: #fff;
-            transition: background-color 0.3s;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+            border-radius: 15px; /* Rounded corners for the card effect */
+            background-color: #333; /* Dark gray for the menu item cards */
+            color: #ccc; /* Light gray text for readability */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
         }
         .menu-item:hover {
-            background-color: #579ecc; /* Slightly darker on hover */
+            background-color: #444; /* Slightly darker on hover */
         }
         .menu-item img {
             width: 24px;
             height: 24px;
             margin-right: 10px;
+            filter: brightness(0) invert(1); /* Invert colors for white icons */
         }
         .dropdown-container {
             padding: 15px;
-            /* background-color: #003366; Consistent with phone screen background */
+            background-color: #000; /* Black background to match the phone screen */
         }
         .dropdown {
             margin-bottom: 10px;
             padding: 10px;
             font-size: 16px;
-            border: 1px solid #ccc;
+            border: 1px solid #444; /* Dark border for the dropdown */
             border-radius: 5px;
             cursor: pointer;
-            outline: none;
-            width: calc(100% - 30px); /* Adjust width considering padding */
+            background-color: #333; /* Dark gray dropdown background */
+            color: #ccc; /* Light gray dropdown text */
+            width: calc(100% - 30px);
             box-sizing: border-box;
-            background-color: #fff; /* White dropdown background */
-            color: #000; /* Black dropdown text */
         }
         .bottom-menu {
             position: absolute;
             bottom: 0;
             width: 100%;
-            background-color: #007bff;
-            color: #fff;
+            background-color: #1a1a1a; /* Dark gray to match the header */
+            color: #ccc; /* Light gray text to match the theme */
             display: flex;
             justify-content: space-around;
             padding: 10px 0;
         }
         .bottom-menu img {
-            filter: invert(100%);
+            filter: brightness(0) invert(1); /* Invert colors for white icons */
             width: 30px;
             height: 30px;
         }
@@ -165,8 +90,6 @@
         <div class="header">
             <h1>safeID</h1>
         </div>
-
-        <!-- Dropdowns for Region and Language -->
         <div class="dropdown-container">
             <select class="dropdown" id="region-dropdown">
                 <option value="">Select Region</option>
@@ -185,24 +108,22 @@
                 <option value="chinese">Chinese</option>
             </select>
         </div>
-
         <div class="menu-item">
             <img src="imgs/Trip-Info-Dark.ico" />
-            <span>Edit Cards</span>
+            <span>Edit My Trip</span>
         </div>
         <div class="menu-item">
             <img src="imgs/Rest-ID-Turquoise.ico" />
-            <span>Restaurant ID</span>
+            <span>View My Restaurant ID</span>
         </div>
         <div class="menu-item">
             <img src="imgs/Med-ID-Red.ico" />
-            <span>Full Medical ID</span>
+            <span>View My Full Medical ID</span>
         </div>
         <div class="menu-item">
             <img src="imgs/Phone-Dark.ico" />
             <span>Get Help</span>
         </div>
-
         <div class="bottom-menu">
             <div>
                 <img src="imgs/My-Info-Dark.ico" />
