@@ -6,9 +6,8 @@ body {
 .flip-card {
   background-color: transparent;
   position: relative;
-    left: 42%;
   width: 300px;
-  height: 700px;
+  height: 400px;
   perspective: 1000px;
 }
 
@@ -61,4 +60,129 @@ body {
 
 .three{
     justify-self: end;
+}
+
+
+
+/* From home style */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4; /* Reverted back to the light background */
+  overflow: hidden;
+}
+.phone-container {
+  width: 350px;
+  height: 700px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  /* background-color: #003366; Consistent with phone screen background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  overflow: auto;
+  color: #fff; /* White text color for better contrast */
+}
+.header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 1px;
+  text-align: left;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 18px;
+  padding-left: 10px;
+}
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 15px; /* Rounded corners like app tiles */
+  background-color: #66b2ff; /* Much lighter blue for the tiles */
+  color: #fff;
+  transition: background-color 0.3s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+}
+.menu-item:hover {
+  background-color: #579ecc; /* Slightly darker on hover */
+}
+.menu-item img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+.dropdown-container {
+  padding: 15px;
+  /* background-color: #003366; Consistent with phone screen background */
+}
+.dropdown {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  width: calc(100% - 30px); /* Adjust width considering padding */
+  box-sizing: border-box;
+  background-color: #fff; /* White dropdown background */
+  color: #000; /* Black dropdown text */
+}
+.bottom-menu {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #007bff;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+.bottom-menu img {
+  filter: invert(100%);
+  width: 30px;
+  height: 30px;
+}
+.bottom-menu p {
+  margin: 0;
+  font-size: 14px;
+}
+
+
+a:link {
+color: rgb(0, 225, 255);
+background-color: transparent;
+text-decoration: none;
+}
+
+a:active {
+color: rgb(0, 225, 255);
+background-color: transparent;
+text-decoration: underline;
+}
+
+a:visited {
+color: rgb(0, 225, 255);
+background-color: transparent;
+text-decoration: none;
+}
+
+a:hover {
+color: red;
+background-color: transparent;
+text-decoration: underline;
+}
+
+h1 {
+  color: black;
+}
+
+h3 {
+  color: black;
+}
+#custom-link {
+  color: black;
 }
