@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SafeID</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4; /* Light background for the overall page */
+            overflow: hidden;
+        }
+        .phone-container {
+            width: 350px;
+            height: 700px;
+            border-radius: 10px;
+            background-color: #000; /* Black background for the phone screen */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            overflow: auto;
+            color: #ccc; /* Light gray text for better contrast */
+        }
+        .header {
+            background-color: #1a1a1a; /* Darker gray for the header */
+            color: #ccc; /* Light gray text to match the theme */
+            padding: 10px;
+            font-size: 18px;
+        }
+        .menu-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 15px; /* Rounded corners for the card effect */
+            background-color: #333; /* Dark gray for the menu item cards */
+            color: #ccc; /* Light gray text for readability */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        }
+        .menu-item:hover {
+            background-color: #444; /* Slightly darker on hover */
+        }
+        .menu-item img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            filter: brightness(0) invert(1); /* Invert colors for white icons */
+        }
+        .dropdown-container {
+            padding: 15px;
+            background-color: #000; /* Black background to match the phone screen */
+        }
+        .dropdown {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #444; /* Dark border for the dropdown */
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #333; /* Dark gray dropdown background */
+            color: #ccc; /* Light gray dropdown text */
+            width: calc(100% - 30px);
+            box-sizing: border-box;
+        }
+        .bottom-menu {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #1a1a1a; /* Dark gray to match the header */
+            color: #ccc; /* Light gray text to match the theme */
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+        }
+        .bottom-menu img {
+            filter: brightness(0) invert(1); /* Invert colors for white icons */
+            width: 30px;
+            height: 30px;
+        }
+        .bottom-menu p {
+            margin: 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="phone-container">
+        <div class="header">
+            <h1>safeID</h1>
+        </div>
+        <div class="dropdown-container">
+            <select class="dropdown" id="region-dropdown">
+                <option value="">Select Region</option>
+                <option value="europe">Europe</option>
+                <option value="asia">Asia</option>
+                <option value="americas">Americas</option>
+                <option value="africa">Africa</option>
+                <option value="oceania">Oceania</option>
+            </select>
+            <select class="dropdown" id="language-dropdown">
+                <option value="">Select Language</option>
+                <option value="english">English</option>
+                <option value="spanish">Spanish</option>
+                <option value="french">French</option>
+                <option value="german">German</option>
+                <option value="chinese">Chinese</option>
+            </select>
+        </div>
+        <div class="menu-item">
+            <img src="imgs/Trip-Info-Dark.ico" />
+            <span>Edit My Trip</span>
+        </div>
+        <div class="menu-item">
+            <img src="imgs/Rest-ID-Turquoise.ico" />
+            <span>View My Restaurant ID</span>
+        </div>
+        <div class="menu-item">
+            <img src="imgs/Med-ID-Red.ico" />
+            <span>View My Full Medical ID</span>
+        </div>
+        <div class="menu-item">
+            <img src="imgs/Phone-Dark.ico" />
+            <span>Get Help</span>
+        </div>
+        <div class="bottom-menu">
+            <div>
+                <img src="imgs/My-Info-Dark.ico" />
+                <p>My Info</p>
+            </div>
+            <div>
+                <img src="imgs/Home-Dark.ico" />
+                <p>Home</p>
+            </div>
+            <div>
+                <img src="imgs/More-Menu-Dark.ico" />
+                <p>More</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
