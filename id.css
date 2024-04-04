@@ -5,7 +5,8 @@ body {
 
 .flip-card {
   background-color: transparent;
-  position: relative;
+  position: top;
+  margin-left: 1.5em;
   width: 300px;
   height: 400px;
   perspective: 1000px;
@@ -68,46 +69,46 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4; /* Reverted back to the light background */
+  font-family: 'Helvetica', sans-serif;
+  background-color: #f4f4f4; /* Light background for the overall page */
   overflow: hidden;
 }
 .phone-container {
   width: 350px;
   height: 700px;
-  border: 1px solid #ccc;
   border-radius: 10px;
-  /* background-color: #003366; Consistent with phone screen background */
+  background-color: #000; /* Black background for the phone screen */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: fixed;
   top: 20px;
   left: 20px;
   overflow: auto;
-  color: #fff; /* White text color for better contrast */
+  color: #ccc; /* Light gray text for better contrast */
 }
 .header {
-  background-color: #007bff;
-  color: #fff;
-  padding: 1px;
-  text-align: left;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  background-color: #000; /* Changed background color to black */
+  color: rgb(255, 255, 255);
+  padding-left: 20px; /* Reduced padding to make the header less tall */
   font-size: 18px;
-  padding-left: 10px;
+  text-align: left; /* Ensures the title is centered if needed */
 }
+
 .menu-item {
   display: flex;
   align-items: center;
+  justify-content: left;
   padding: 15px;
   margin: 10px;
-  border-radius: 15px; /* Rounded corners like app tiles */
-  background-color: #66b2ff; /* Much lighter blue for the tiles */
-  color: #fff;
-  transition: background-color 0.3s;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+  border-radius: 15px; /* Rounded corners for the card effect */
+  background-color: #333; /* Dark gray for the menu item cards */
+  color: rgb(255, 255, 255); /* Light gray text for readability */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+.menu-item span {
+  font-weight: 500;  /* Makes the text bold */
 }
 .menu-item:hover {
-  background-color: #579ecc; /* Slightly darker on hover */
+  background-color: #444; /* Slightly darker on hover */
 }
 .menu-item img {
   width: 24px;
@@ -115,74 +116,96 @@ body {
   margin-right: 10px;
 }
 .dropdown-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the dropdowns horizontally */
   padding: 15px;
-  /* background-color: #003366; Consistent with phone screen background */
+  background-color: #000;
 }
 .dropdown {
   margin-bottom: 10px;
   padding: 10px;
   font-size: 16px;
-  border: 1px solid #ccc;
+  border: 1px solid #444; /* Dark border for the dropdown */
   border-radius: 5px;
   cursor: pointer;
-  outline: none;
-  width: calc(100% - 30px); /* Adjust width considering padding */
+  background-color: #333; /* Dark gray dropdown background */
+  color: rgb(255, 251, 251); /* Light gray dropdown text */
+  width: calc(100% - 30px);
   box-sizing: border-box;
-  background-color: #fff; /* White dropdown background */
-  color: #000; /* Black dropdown text */
 }
 .bottom-menu {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-color: #007bff;
-  color: #fff;
+  background-color: #1a1a1a; /* Dark gray to match the header */
+  color: #ccc; /* Light gray text to match the theme */
   display: flex;
   justify-content: space-around;
   padding: 10px 0;
 }
+.bottom-menu div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .bottom-menu img {
-  filter: invert(100%);
+   /* Invert colors for white icons */
   width: 30px;
   height: 30px;
 }
+
+.not-active-icon {
+  filter: brightness(0) invert(1);
+}
 .bottom-menu p {
   margin: 0;
-  font-size: 14px;
+  font-size: 15px;
 }
-
-
 a:link {
-color: rgb(0, 225, 255);
-background-color: transparent;
-text-decoration: none;
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
 }
-
 a:active {
-color: rgb(0, 225, 255);
-background-color: transparent;
-text-decoration: underline;
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
 }
-
 a:visited {
-color: rgb(0, 225, 255);
-background-color: transparent;
-text-decoration: none;
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
 }
-
 a:hover {
-color: red;
-background-color: transparent;
-text-decoration: underline;
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+.get-help {
+  border: 2px solid #8B0000; /* Dark red border */
+  background-color: #df072b; /* Light red background */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+/* Hover effect for Get Help button */
+.get-help:hover {
+  background-color: #d82e4a; /* Slightly lighter red for hover */
+}
+.user-info {
+  font-size: 14px; /* Smaller font size for subtlety */
+  color: rgb(255, 255, 255); /* Lighter color for less emphasis */
+  margin-top: -18px; /* Adds a little space between this text and the safeID title */
+  text-align: left; /* Centers the text under the safeID title */
 }
 
-h1 {
-  color: black;
+.prompt {
+  font-size: 14px; /* Smaller font size for subtlety */
+  font-weight: bold; 
+  color: rgb(158, 158, 158); /* Lighter color for less emphasis */
+  margin-top: -10px; /* Adds a little space between this and page header */
+  text-align: left; /* Centers the text under the page header */
 }
 
-h3 {
-  color: black;
-}
-#custom-link {
-  color: black;
+.active p {
+  color: #197bd6; /* Light blue color for the text */
 }
