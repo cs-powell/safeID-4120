@@ -6,7 +6,7 @@
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Helvetica', sans-serif;
             background-color: #f4f4f4; /* Light background for the overall page */
             overflow: hidden;
         }
@@ -23,21 +23,26 @@
             color: #ccc; /* Light gray text for better contrast */
         }
         .header {
-            background-color: #1a1a1a; /* Darker gray for the header */
-            color: #ccc; /* Light gray text to match the theme */
-            padding: 10px;
+            background-color: #000; /* Changed background color to black */
+            color: rgb(255, 255, 255);
+            padding-left: 20px; /* Reduced padding to make the header less tall */
             font-size: 18px;
+            text-align: left; /* Ensures the title is centered if needed */
         }
+
         .menu-item {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: left;
             padding: 15px;
             margin: 10px;
             border-radius: 15px; /* Rounded corners for the card effect */
             background-color: #333; /* Dark gray for the menu item cards */
-            color: #ccc; /* Light gray text for readability */
+            color: rgb(255, 255, 255); /* Light gray text for readability */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        }
+        .menu-item span {
+            font-weight: 500;  /* Makes the text bold */
         }
         .menu-item:hover {
             background-color: #444; /* Slightly darker on hover */
@@ -46,11 +51,13 @@
             width: 24px;
             height: 24px;
             margin-right: 10px;
-            filter: brightness(0) invert(1); /* Invert colors for white icons */
         }
         .dropdown-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers the dropdowns horizontally */
             padding: 15px;
-            background-color: #000; /* Black background to match the phone screen */
+            background-color: #000;
         }
         .dropdown {
             margin-bottom: 10px;
@@ -60,7 +67,7 @@
             border-radius: 5px;
             cursor: pointer;
             background-color: #333; /* Dark gray dropdown background */
-            color: #ccc; /* Light gray dropdown text */
+            color: rgb(255, 251, 251); /* Light gray dropdown text */
             width: calc(100% - 30px);
             box-sizing: border-box;
         }
@@ -74,54 +81,74 @@
             justify-content: space-around;
             padding: 10px 0;
         }
+        .bottom-menu div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
         .bottom-menu img {
-            filter: brightness(0) invert(1); /* Invert colors for white icons */
+             /* Invert colors for white icons */
             width: 30px;
             height: 30px;
         }
+
+        .not-active-icon {
+            filter: brightness(0) invert(1);
+        }
         .bottom-menu p {
             margin: 0;
-            font-size: 14px;
+            font-size: 15px;
+        }
+        a:link {
+            color: white;
+            background-color: transparent;
+            text-decoration: none;
+        }
+        a:active {
+            color: white;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+        a:visited {
+            color: white;
+            background-color: transparent;
+            text-decoration: none;
+        }
+        a:hover {
+            color: red;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+        .get-help {
+            border: 2px solid #8B0000; /* Dark red border */
+            background-color: #df072b; /* Light red background */
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+        }
+        /* Hover effect for Get Help button */
+        .get-help:hover {
+            background-color: #d82e4a; /* Slightly lighter red for hover */
+        }
+        .user-info {
+            font-size: 14px; /* Smaller font size for subtlety */
+            color: rgb(255, 255, 255); /* Lighter color for less emphasis */
+            margin-top: -18px; /* Adds a little space between this text and the safeID title */
+            text-align: left; /* Centers the text under the safeID title */
         }
 
-
-        a:link {
-  color: white;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:active {
-  color: white;
-  background-color: transparent;
-  text-decoration: underline;
-}
-
-a:visited {
-  color: white;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:hover {
-  color: red;
-  background-color: transparent;
-  text-decoration: underline;
-}
-
-
-
-
+        .active p {
+            color: #197bd6; /* Light blue color for the text */
+        }
     </style>
 </head>
 <body>
     <div class="phone-container">
         <div class="header">
             <h1>safeID</h1>
+            <p class="user-info">Last ID update: April 3, 2024</p>
         </div>
         <div class="dropdown-container">
             <select class="dropdown" id="region-dropdown">
-                <option value="">Select Region</option>
+                <option value="">Select Country</option>
                 <option value="europe">Europe</option>
                 <option value="asia">Asia</option>
                 <option value="americas">Americas</option>
@@ -138,32 +165,33 @@ a:hover {
             </select>
         </div>
         <div class="menu-item">
-            <img src="imgs/Trip-Info-Dark.ico" />
-            <span>Edit My Trip</span>
+            <img src="imgs/fork.png" />
+            <span>Restaurant ID</span>
+        </div>
+        
+        <div class="menu-item">
+            <img src="imgs/circle (1).png" />
+            <span>Medical ID</span>
         </div>
         <div class="menu-item">
-            <img src="imgs/Rest-ID-Turquoise.ico" />
-            <span><a href = "id.html">View My Restaurant ID</a></span>
+            <img src="imgs/worldwide.png" />
+            <span>Edit Info</span>
         </div>
-        <div class="menu-item">
-            <img src="imgs/Med-ID-Red.ico" />
-            <span>View My Full Medical ID</span>
-        </div>
-        <div class="menu-item">
+        <div class="menu-item get-help">
             <img src="imgs/Phone-Dark.ico" />
-            <span>Get Help</span>
+            <span>Emergency Assistance</span>
         </div>
         <div class="bottom-menu">
             <div>
-                <img src="imgs/My-Info-Dark.ico" />
+                <img class = "not-active-icon" src="imgs/My-Info-Dark.ico" />
                 <p>My Info</p>
             </div>
-            <div>
-                <img src="imgs/Home-Dark.ico" />
+            <div class="active">
+                <img src="imgs/building.png" />
                 <p>Home</p>
             </div>
             <div>
-                <img src="imgs/More-Menu-Dark.ico" />
+                <img class = "not-active-icon" src="imgs/More-Menu-Dark.ico" />
                 <p>More</p>
             </div>
         </div>
