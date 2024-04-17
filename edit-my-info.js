@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", async function(event) {
     const name = JSON.parse(txt).name;
 });
 
-
 async function updateMyInfo() {
     var x = document.getElementById("dairy_all");
     if (x.checked) {
@@ -358,5 +357,6 @@ async function updateMyInfo() {
     console.log(medConditions);
     console.log(healthInfo);
     console.log(medications);
-}
 
+    
+}
