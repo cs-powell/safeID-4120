@@ -16,14 +16,16 @@ document.addEventListener("DOMContentLoaded", async function(event) {
     foodall.forEach(element => {
         var x = document.getElementById(element);
         console.log(x);
-        x.setAttribute("checked", true);
-        x.setAttribute("defaultChecked", true);
-        foodAllergies.push(x.value);
+        if(!(x===null || x===undefined)) {
+            x.setAttribute("checked", true);
+            x.setAttribute("defaultChecked", true);
+            foodAllergies.push(x.value);
+        }
     });
     const name = JSON.parse(txt).name;
 });
 
-async function updateMyInfo() {
+function updateFoodAllergies() {
     var x = document.getElementById("dairy_all");
     if (x.checked) {
         if(!foodAllergies.includes(x.value)) {
@@ -127,8 +129,11 @@ async function updateMyInfo() {
         }
         x.setAttribute("defaultChecked", false);
     }
+    console.log(foodAllergies);
+}
 
-    x = document.getElementById("anti_all");
+function updateOtherAllergies() {
+    var x = document.getElementById("anti_all");
     if (x.checked) {
         if(!otherAllergies.includes(x.value)) {
             otherAllergies.push(x.value);
@@ -179,8 +184,11 @@ async function updateMyInfo() {
         }
         x.setAttribute("defaultChecked", false);
     }
+    console.log(otherAllergies);
+}
 
-    x = document.getElementById("arth");
+function updateMedicalConditions() {
+    var x = document.getElementById("arth");
     if (x.checked) {
         if(!medConditions.includes(x.value)) {
             medConditions.push(x.value);
@@ -296,8 +304,11 @@ async function updateMyInfo() {
         }
         x.setAttribute("defaultChecked", false);
     }
+    console.log(medConditions);
+}
 
-    x = document.getElementById("epipen");
+function updateHealthInfo() {
+    var x = document.getElementById("epipen");
     if (x.checked) {
         if(!healthInfo.includes(x.value)) {
             healthInfo.push(x.value);
@@ -352,11 +363,18 @@ async function updateMyInfo() {
     x = document.getElementById("meds");
     medications = x.value;
 
+    console.log(healthInfo);
+    console.log(medications);
+}
+
+async function updateMyInfo() {
+    updateFoodAllergies();
+    updateOtherAllergies();    
+    updateMedicalConditions(); 
+
     console.log(foodAllergies);
     console.log(otherAllergies);
     console.log(medConditions);
     console.log(healthInfo);
     console.log(medications);
-
-    
 }
