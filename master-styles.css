@@ -46,6 +46,10 @@ body {
   transform: rotateY(180deg);
 }
 
+#medical {
+  background-color: red;
+}
+
 .entry {
   display: flex;
   align-items: center;
