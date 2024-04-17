@@ -5,7 +5,26 @@ let medications = "";
 let medConditions = [];
 let healthInfo = [];
 
-const updateMyInfo = () => {
+const file = "default-chosen.json";
+
+document.addEventListener("DOMContentLoaded", async function(event) {
+    var txt = await fetch(file).then((result) => result.text());
+    console.log(JSON.parse(txt).food);
+
+    var foodall = JSON.parse(txt).food.split(',');
+    console.log(foodall);
+    foodall.forEach(element => {
+        var x = document.getElementById(element);
+        console.log(x);
+        x.setAttribute("checked", true);
+        x.setAttribute("defaultChecked", true);
+        foodAllergies.push(x.value);
+    });
+    const name = JSON.parse(txt).name;
+});
+
+
+async function updateMyInfo() {
     var x = document.getElementById("dairy_all");
     if (x.checked) {
         if(!foodAllergies.includes(x.value)) {
@@ -14,7 +33,7 @@ const updateMyInfo = () => {
         }
     } else {
         if(foodAllergies.includes(x.value)) {
-            foodAllergies.remove(x.value);
+            foodAllergies = foodAllergies.filter((word) => word != x.value);
         }
         x.setAttribute("defaultChecked", false);
     }
@@ -27,7 +46,7 @@ const updateMyInfo = () => {
         }
     } else {
         if(foodAllergies.includes(x.value)) {
-            foodAllergies.remove(x.value);
+            foodAllergies = foodAllergies.filter((word) => word != x.value);
         }
         x.setAttribute("defaultChecked", false);
     }
@@ -40,7 +59,7 @@ const updateMyInfo = () => {
         }
     } else {
         if(foodAllergies.includes(x.value)) {
-            foodAllergies.remove(x.value);
+            foodAllergies = foodAllergies.filter((word) => word != x.value);
         }
         x.setAttribute("defaultChecked", false);
     }
@@ -53,7 +72,7 @@ const updateMyInfo = () => {
         }
     } else {
         if(foodAllergies.includes(x.value)) {
-            foodAllergies.remove(x.value);
+            foodAllergies = foodAllergies.filter((word) => word != x.value);
         }
         x.setAttribute("defaultChecked", false);
     }
@@ -66,7 +85,7 @@ const updateMyInfo = () => {
         }
     } else {
         if(foodAllergies.includes(x.value)) {
-            foodAllergies.remove(x.value);
+            foodAllergies = foodAllergies.filter((word) => word != x.value);
         }
         x.setAttribute("defaultChecked", false);
     }
@@ -79,7 +98,7 @@ const updateMyInfo = () => {
         }
     } else {
         if(foodAllergies.includes(x.value)) {
-            foodAllergies.remove(x.value);
+            foodAllergies = foodAllergies.filter((word) => word != x.value);
         }
         x.setAttribute("defaultChecked", false);
     }
@@ -92,7 +111,7 @@ const updateMyInfo = () => {
         }
     } else {
         if(foodAllergies.includes(x.value)) {
-            foodAllergies.remove(x.value);
+            foodAllergies = foodAllergies.filter((word) => word != x.value);
         }
         x.setAttribute("defaultChecked", false);
     }
@@ -105,7 +124,7 @@ const updateMyInfo = () => {
         }
     } else {
         if(foodAllergies.includes(x.value)) {
-            foodAllergies.remove(x.value);
+            foodAllergies = foodAllergies.filter((word) => word != x.value);
         }
         x.setAttribute("defaultChecked", false);
     }
@@ -118,7 +137,7 @@ const updateMyInfo = () => {
         }
     } else {
         if(otherAllergies.includes(x.value)) {
-            otherAllergies.remove(x.value);
+            otherdAllergies = otherAllergiesAllergies.filter((word) => word != x.value);
         }
         x.setAttribute("defaultChecked", false);
     }
@@ -131,7 +150,7 @@ const updateMyInfo = () => {
         }
     } else {
         if(otherAllergies.includes(x.value)) {
-            otherAllergies.remove(x.value);
+            otherAllergies = otherAllergies.filter((word) => word != x.value);
         }
         x.setAttribute("defaultChecked", false);
     }
@@ -144,7 +163,7 @@ const updateMyInfo = () => {
         }
     } else {
         if(otherAllergies.includes(x.value)) {
-            otherAllergies.remove(x.value);
+            otherAllergies = otherAllergies.filter((word) => word != x.value);
         }
         x.setAttribute("defaultChecked", false);
     }
@@ -157,7 +176,7 @@ const updateMyInfo = () => {
         }
     } else {
         if(otherAllergies.includes(x.value)) {
-            otherAllergies.remove(x.value);
+            otherAllergies = otherAllergies.filter((word) => word != x.value);
         }
         x.setAttribute("defaultChecked", false);
     }
@@ -170,7 +189,7 @@ const updateMyInfo = () => {
         }
     } else {
         if(medConditions.includes(x.value)) {
-            medConditions.remove(x.value);
+            medConditions = medConditions.filter((word) => word != x.value);
         }
         x.setAttribute("defaultChecked", false);
     }
@@ -183,7 +202,7 @@ const updateMyInfo = () => {
         }
     } else {
         if(medConditions.includes(x.value)) {
-            medConditions.remove(x.value);
+            medConditions = medConditions.filter((word) => word != x.value);
         }
         x.setAttribute("defaultChecked", false);
     }
@@ -196,7 +215,7 @@ const updateMyInfo = () => {
         }
     } else {
         if(medConditions.includes(x.value)) {
-            medConditions.remove(x.value);
+            medConditions = medConditions.filter((word) => word != x.value);
         }
         x.setAttribute("defaultChecked", false);
     }
@@ -209,7 +228,7 @@ const updateMyInfo = () => {
         }
     } else {
         if(medConditions.includes(x.value)) {
-            medConditions.remove(x.value);
+            medConditions = medConditions.filter((word) => word != x.value);
         }
         x.setAttribute("defaultChecked", false);
     }
@@ -222,7 +241,7 @@ const updateMyInfo = () => {
         }
     } else {
         if(medConditions.includes(x.value)) {
-            medConditions.remove(x.value);
+            medConditions = medConditions.filter((word) => word != x.value);
         }
         x.setAttribute("defaultChecked", false);
     }
@@ -235,7 +254,7 @@ const updateMyInfo = () => {
         }
     } else {
         if(medConditions.includes(x.value)) {
-            medConditions.remove(x.value);
+            medConditions = medConditions.filter((word) => word != x.value);
         }
         x.setAttribute("defaultChecked", false);
     }
@@ -248,7 +267,7 @@ const updateMyInfo = () => {
         }
     } else {
         if(medConditions.includes(x.value)) {
-            medConditions.remove(x.value);
+            medConditions = medConditions.filter((word) => word != x.value);
         }
         x.setAttribute("defaultChecked", false);
     }
@@ -261,7 +280,7 @@ const updateMyInfo = () => {
         }
     } else {
         if(medConditions.includes(x.value)) {
-            medConditions.remove(x.value);
+            medConditions = medConditions.filter((word) => word != x.value);
         }
         x.setAttribute("defaultChecked", false);
     }
@@ -274,7 +293,7 @@ const updateMyInfo = () => {
         }
     } else {
         if(medConditions.includes(x.value)) {
-            medConditions.remove(x.value);
+            medConditions = medConditions.filter((word) => word != x.value);
         }
         x.setAttribute("defaultChecked", false);
     }
@@ -287,7 +306,7 @@ const updateMyInfo = () => {
         }
     } else {
         if(healthInfo.includes(x.value)) {
-            healthInfo.remove(x.value);
+            healthInfo = healthInfo.filter((word) => word != x.value);
         }
         x.setAttribute("defaultChecked", false);
     }
@@ -300,7 +319,7 @@ const updateMyInfo = () => {
         }
     } else {
         if(healthInfo.includes(x.value)) {
-            healthInfo.remove(x.value);
+            healthInfo = healthInfo.filter((word) => word != x.value);
         }
         x.setAttribute("defaultChecked", false);
     }
@@ -313,7 +332,7 @@ const updateMyInfo = () => {
         }
     } else {
         if(healthInfo.includes(x.value)) {
-            healthInfo.remove(x.value);
+            healthInfo = healthInfo.filter((word) => word != x.value);
         }
         x.setAttribute("defaultChecked", false);
     }
@@ -326,7 +345,7 @@ const updateMyInfo = () => {
         }
     } else {
         if(healthInfo.includes(x.value)) {
-            healthInfo.remove(x.value);
+            healthInfo = healthInfo.filter((word) => word != x.value);
         }
         x.setAttribute("defaultChecked", false);
     }
@@ -340,3 +359,4 @@ const updateMyInfo = () => {
     console.log(healthInfo);
     console.log(medications);
 }
+

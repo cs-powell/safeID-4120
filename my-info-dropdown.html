@@ -1,0 +1,425 @@
+<html>
+ 
+<head>
+    <link rel="stylesheet" href="master-styles.css" />
+    <script src="edit-my-info.js"></script>
+ 
+    <style>
+        .multipleSelection {
+            width: 300px;
+            padding-left: 10px;          
+        }
+ 
+        .selectBox {
+            padding-left: 10px;  
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 5px;
+            margin: 5px;
+            border-radius: 10px; /* Rounded corners for the card effect */
+            background-color: #333; /* Dark gray for the menu item cards */
+            color: rgb(255, 255, 255); /* Light gray text for readability */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        }
+ 
+        .selectBox select {
+            width: 95%;
+            font-weight: bold;
+            background-color: #333;
+            color: e0e0e0;
+            border: #333;
+            font-size: 25px;
+        }
+ 
+        .overSelect {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+ 
+        #checkBoxes {
+            padding-left: 10px;  
+            display: none;
+        }
+ 
+        #checkBoxes label {
+            display: inline;
+        }
+ 
+        #checkBoxes label:hover {
+            background-color: #4F615E;
+            color: white;
+            /* Added text color for better visibility */
+        }
+
+        #checkBoxes2 {
+            padding-left: 10px;  
+            display: none;
+        }
+ 
+        #checkBoxes2 label {
+            display: inline;
+        }
+ 
+        #checkBoxes2 label:hover {
+            background-color: #4F615E;
+            color: white;
+            /* Added text color for better visibility */
+        }
+
+        #checkBoxes3 {
+            padding-left: 10px;  
+            display: none;
+        }
+ 
+        #checkBoxes3 label {
+            display: inline;
+        }
+ 
+        #checkBoxes3 label:hover {
+            background-color: #4F615E;
+            color: white;
+            /* Added text color for better visibility */
+        }
+
+        #checkBoxes4 {
+            padding-left: 10px;  
+            display: none;
+        }
+ 
+        #checkBoxes4 label {
+            display: inline;
+        }
+ 
+        #checkBoxes4 label:hover {
+            background-color: #4F615E;
+            color: white;
+            /* Added text color for better visibility */
+        }
+
+        label {
+            display: inline-block;
+            cursor: pointer;
+            position: relative;
+            padding-left: 0px;
+            padding-bottom: 5px;
+            margin-right: 5px;
+            font-size: 20px;
+        }
+
+        label:before {
+            content: "";
+            display: inline;
+            
+            width: 20px;
+            height: 20px;
+            
+            margin-right: 5px;
+            position: relative;
+            left: 0;
+            bottom: 2px;
+            background-color:#D6183B;
+            box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .45);
+            border-radius: 3px;
+        }
+
+        input[type=checkbox] {
+            display: none;
+        }
+        .checkbox label:before {
+            border-radius: 3px;
+        }
+
+        input[type=checkbox]:checked + label:before {
+            content: "X";
+            font-weight: bold;
+            padding-left: 3px;
+            padding-right: 3px;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+            font-size: 15px;
+            color: #fff;
+            text-align: center;
+                line-height: 20px;
+        }
+
+        input[type=checkbox]+ label:before {
+            content: "X";
+            font-weight: bold;
+            padding-left: 3px;
+            padding-right: 3px;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+            font-size: 15px;
+            color: #D6183B;
+            text-align: center;
+                line-height: 20px;
+        }
+        #name {
+            color: #e0e0e0;
+            position: relative;
+            align-items: center;
+            margin-left: 15px;
+            margin-right: 45px;
+        }
+        button {
+            background-color: #D6183B;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 5px;
+            color: #e0e0e0;
+            border-color: #D6183B;
+            padding: 5px;
+            border-radius: 7px;
+        }
+
+        #meds {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            padding-inline: 10px;
+            margin-left: 0px;
+            border-radius: 5px;
+            border-color: #1a1a1a;
+            font-size: 20px;
+        }
+
+        h3 {
+            font-size: 25px;
+        }
+
+        #meds_section {
+            padding-left: 10px;  
+            position: relative;
+            align-items: center;
+            justify-content: space-around;
+            padding: 5px;
+            margin: 5px;
+            border-radius: 10px; /* Rounded corners for the card effect */
+            background-color: #333; /* Dark gray for the menu item cards */
+            color: rgb(255, 255, 255); /* Light gray text for readability */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        }
+    </style>
+</head>
+ 
+<body>
+    <div class="phone-container">
+        <div class="header">
+            <h1>My Info</h1>
+            <p class="user-info">Last ID update: April 3, 2024</p>
+        </div>
+        <br/>
+
+        <h3 contenteditable = "true" class="info-label" id="name">Enter Name Here</h3>
+  
+        <div class="multipleSelection">
+            <div class="selectBox" onclick="showCheckboxes()">
+                <select>
+                    <option>Food Allergies</option>
+                </select>
+                <div class="overSelect"></div>
+            </div>
+ 
+            <div id="checkBoxes">
+                <input class="container" id="dairy_all" type="checkbox" value="Dairy">
+                <label for="dairy_all">Dairy<span class="checkmark"></span></label>
+    
+                <input class="container" id="egg_all" type="checkbox" value="Eggs">
+                <label for="egg_all">Eggs<span class="checkmark"></span></label>
+                
+                <input class="container" id="fish_all" type="checkbox" value="Fish">
+                <label for="fish_all">Fish<span class="checkmark"></span></label>
+    
+                <input class="container" id="gluten_all" type="checkbox" value="Gluten">
+                <label for="gluten_all">Gluten<span class="checkmark"></span></label>
+    
+                <input class="container" id="peanut_all" type="checkbox" value="Peanuts">
+                <label for="peanut_all">Peanuts<span class="checkmark"></span></label>
+    
+                <input class="container" id="ses_all" type="checkbox" value="Sesame">
+                <label for="ses_all">Sesame<span class="checkmark"></span></label>
+    
+                <input class="container" id="shell_all" type="checkbox" value="Shellfish">
+                <label for="shell_all">Shellfish<span class="checkmark"></span></label>
+    
+                <input class="container" id="soy_all" type="checkbox" value="Soy">
+                <label for="soy_all">Soy<span class="checkmark"></span></label>
+    
+                <input class="container" id="nut_all" type="checkbox" value="Nuts">
+                <label for="nut_all">Tree Nuts<span class="checkmark"></span></label>
+            </div>
+        </div>
+
+        <div class="multipleSelection">
+            <div class="selectBox" onclick="showCheckboxes2()">
+                <select>
+                    <option>Other Allergies</option>
+                </select>
+                <div class="overSelect"></div>
+            </div>
+ 
+            <div id="checkBoxes2">
+                <input id="anti_all" type="checkbox" value="Antibiotics">
+            <label for="anti_all">-Cillin Antibiotics</label>
+
+            <input id="bee_all" type="checkbox" value="Bees">
+            <label for="bee_all">Bee and Insect Stings</label>
+
+            <input id="latex_all" type="checkbox" value="Latex">
+            <label for="latex_all">Latex</label>
+
+            <input id="med_all" type="checkbox" value="Medications">
+            <label for="med_all">Other Medications</label>
+
+            </div>
+               
+        </div>
+
+        <div class="multipleSelection">
+            <div class="selectBox" onclick="showCheckboxes3()">
+                <select>
+                    <option>Medical Conditions</option>
+                </select>
+                <div class="overSelect"></div>
+            </div>
+ 
+            <div id="checkBoxes3">
+                <input id="arth" type="checkbox" value="Arthritis">
+                <label for="arth">Arthritis</label>
+
+                <input id="asthma" type="checkbox" value="Asthma">
+                <label for="asthma">Asthma</label>
+
+                <input id="autoimmune" type="checkbox" value="Autoimmune">
+                <label for="autoimmune">Autoimmune Disorder</label>
+
+                <input id="diabetes" type="checkbox" value="Diabetes">
+                <label for="diabetes">Diabetes</label>
+
+                <input id="epilep" type="checkbox" value="Epilepsy">
+                <label for="epilep">Epilepsy</label>
+
+                <input id="heart" type="checkbox" value="Heart">
+                <label for="heart">Heart Disease</label>
+
+                <input id="hypt" type="checkbox" value="Hypertension">
+                <label for="hypt">Hypertension</label>
+
+                <input id="ibs" type="checkbox" value="IBS">
+                <label for="ibs">Irritable Bowel Syndrome</label>
+
+                <input id="kidney" type="checkbox" value="Kidney">
+                <label for="kidney">Kidney Disease</label>
+            </div>
+               
+        </div>
+
+        <div class="multipleSelection">
+            <div class="selectBox" onclick="showCheckboxes4()">
+                <select>
+                    <option>Other Health Info<option>
+                </select>
+                <div class="overSelect"></div>
+            </div>
+ 
+            <div id="checkBoxes4">
+                <input id="epipen" type="checkbox" value="EpiPen">
+                <label for="epipen">Carries Epi-Pen</label>
+
+                <input id="inhaler" type="checkbox" value="Inhaler">
+                <label for="inhaler">Carries Inhaler</label>
+
+                <input id="insulin" type="checkbox" value="Insulin">
+                <label for="insulin">Carries Insulin</label>
+
+                <input id="dog" type="checkbox" value="ServiceDog">
+                <label for="dog">Service Dog</label>                                
+            </div>
+
+            <div id="meds_section">
+
+            <h3 class="info-label">Medications</h3>
+            <input id="meds" type="text" value="Enter Medication Name">
+            </div>
+
+           
+       
+
+            <button onclick="updateMyInfo()">Save My Info</button>
+                </div>
+
+                <div class="bottom-menu">
+                    <div>
+                        <a href="my-info.html"><img class="active" src="imgs/My-Info-Red.ico" /></a>
+                        <p>My Info</p>
+                    </div>
+                    <div class="not-active-icon">
+                    <a href = "homeBLACK.html"><img src="imgs/building.png" /></a>
+                    <p>Home</p>
+                    </div>
+                    <div>
+                        <img class = "not-active-icon" src="imgs/More-Menu-Dark.ico" />
+                        <p>More</p>
+                    </div>
+                </div>
+</div>
+ 
+    <script>
+        let show1 = true;
+ 
+        function showCheckboxes() {
+            let checkboxes = document.getElementById("checkBoxes");
+ 
+            if (show1) {
+                checkboxes.style.display = "block";
+                show1 = false;
+            } else {
+                checkboxes.style.display = "none";
+                show1 = true;
+            }
+        }
+
+        let show2 = true;
+
+        function showCheckboxes2() {
+            let checkboxes = document.getElementById("checkBoxes2");
+ 
+            if (show2) {
+                checkboxes.style.display = "block";
+                show2 = false;
+            } else {
+                checkboxes.style.display = "none";
+                show2 = true;
+            }
+        }
+
+        function showCheckboxes3() {
+            let checkboxes = document.getElementById("checkBoxes3");
+ 
+            if (show2) {
+                checkboxes.style.display = "block";
+                show2 = false;
+            } else {
+                checkboxes.style.display = "none";
+                show2 = true;
+            }
+        }
+
+        function showCheckboxes4() {
+            let checkboxes = document.getElementById("checkBoxes4");
+ 
+            if (show2) {
+                checkboxes.style.display = "block";
+                show2 = false;
+            } else {
+                checkboxes.style.display = "none";
+                show2 = true;
+            }
+        }
+    </script>
+    </div>
+</body>
+ 
+</html>
