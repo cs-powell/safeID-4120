@@ -1,0 +1,142 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="master-styles.css" />
+        <script src="edit-my-info.js"></script>
+        <style>
+            label {
+                display: block;
+                cursor: pointer;
+                position: relative;
+                padding-left: 17px;
+                margin-right: 5px;
+                font-size: 20px;
+            }
+
+            label:before {
+                content: "";
+                display: inline-block;
+                
+                width: 20px;
+                height: 20px;
+                
+                margin-right: 10px;
+                position: absolute;
+                left: 0;
+                bottom: 2px;
+                background-color:#D6183B;
+                box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .45);
+            }
+
+            label:hover {
+                background-color: #1a1a1a;
+                color: white;
+            }
+
+            input[type=checkbox] {
+                display: none;
+            }
+            .checkbox label:before {
+                border-radius: 3px;
+            }
+
+            input[type=checkbox]:checked + label:before {
+                content: "X";
+                font-weight: bold;
+                text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+                font-size: 15px;
+                color: #fff;
+                text-align: center;
+                    line-height: 20px;
+            }
+            #name {
+                margin-top: -15px;
+                margin-bottom: -3px;
+            }
+            button {
+                background-color: #D6183B;
+                color: #e0e0e0;
+                border-color: #D6183B;
+                padding: 5px;
+                border-radius: 7px;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            #meds {
+                background-color: #1a1a1a;
+                color: #e0e0e0;
+                padding-inline:5px;
+                border-radius: 5px;
+                border-color: #1a1a1a;
+            }
+            h3 {
+                font-size: 25px;
+            }
+        </style>
+        
+    </head>
+
+    <body>
+    <div class="phone-container">
+        <div class="header">
+            <h1>My Info</h1>
+            <p class="user-info">Last ID update: April 3, 2024</p>
+        </div>
+        <div id="info-input" class="checkbox">
+            <h1 contenteditable = "true" class="info-label" id="name">Name</h1>
+
+            <h3 class="info-label">Food Allergies</h3>
+            
+            <input class="container" id="dairy_all" type="checkbox" value="Dairy">
+            <label for="dairy_all">Dairy<span class="checkmark"></span></label>
+
+            <input class="container" id="egg_all" type="checkbox" value="Eggs">
+            <label for="egg_all">Eggs<span class="checkmark"></span></label>
+            
+            <input class="container" id="fish_all" type="checkbox" value="Fish">
+            <label for="fish_all">Fish<span class="checkmark"></span></label>
+
+            <input class="container" id="gluten_all" type="checkbox" value="Gluten">
+            <label for="gluten_all">Gluten<span class="checkmark"></span></label>
+
+            <input class="container" id="peanut_all" type="checkbox" value="Peanuts">
+            <label for="peanut_all">Peanuts<span class="checkmark"></span></label>
+
+            <input class="container" id="ses_all" type="checkbox" value="Sesame">
+            <label for="ses_all">Sesame<span class="checkmark"></span></label>
+
+            <input class="container" id="shell_all" type="checkbox" value="Shellfish">
+            <label for="shell_all">Shellfish<span class="checkmark"></span></label>
+
+            <input class="container" id="soy_all" type="checkbox" value="Soy">
+            <label for="soy_all">Soy<span class="checkmark"></span></label>
+
+            <input class="container" id="nut_all" type="checkbox" value="Nuts">
+            <label for="nut_all">Tree Nuts<span class="checkmark"></span></label>
+
+            <br/>
+
+
+            <a href="my-info-multipage.html"><button onclick="updateFoodAllergies()">Save Food Allergies</button></a>
+            </div>
+
+            <div class="bottom-menu">
+                <div>
+                    <a href="my-info.html"><img class="active" src="imgs/My-Info-Red.ico" /></a>
+                    <p>My Info</p>
+                </div>
+                <div class="not-active-icon">
+                  <a href = "homeBLACK.html"><img src="imgs/building.png" /></a>
+                  <p>Home</p>
+                </div>
+                <div>
+                    <img class = "not-active-icon" src="imgs/More-Menu-Dark.ico" />
+                    <p>More</p>
+                </div>
+            </div>
+
+        
+    </div>
+    </body>
+    
+</html>
