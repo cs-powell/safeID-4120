@@ -22,7 +22,7 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-.flip-card:hover .flip-card-inner {
+.flip-card.flip-card:click .flip-card-inner {
   transform: rotateY(180deg);
 }
 
@@ -60,6 +60,28 @@ body {
   background-color: #333; /* Dark gray for the menu item cards */
   color: rgb(255, 255, 255); /* Light gray text for readability */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+
+.headerblock {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px; /* Rounded corners for the card effect */
+  background-color: rgb(153, 0, 0); /* Dark gray for the menu item cards */
+  color: rgb(255, 255, 255); /* Light gray text for readability */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  height: 15px;
+  width: auto;
+}
+
+.headerblock h1 {
+
+  padding: 5px;
+  font-size: 15px;
+  color: white;
 }
 
 .entry h1 {
