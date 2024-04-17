@@ -1,5 +1,10 @@
 const file = "default-chosen.json";
+
 let foodAllergies = [];
+
+document.addEventListener("DOMContentLoaded", async function(event) {
+    fetch();
+});
 
 async function fetch() {
     var txt = await fetch(file).then((result) => result.text());
@@ -13,11 +18,3 @@ async function fetch() {
     });
     const name = JSON.parse(txt).name;
 };
-
-// function updateId() {
-//    fetch();
-// };
-
-document.getElementById("flipcard").addEventListener("click", async function(event) {
-    fetch();
-});
