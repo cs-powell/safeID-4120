@@ -25,9 +25,13 @@ document.addEventListener("DOMContentLoaded", async function(event) {
     const name = JSON.parse(txt).name;
 });
 
-async function updateMyInfo() {
+
+
+
+function updateFoodAllergies() {
     var y = document.getElementById("save");
     y.style.backgroundColor = "green";
+
     var x = document.getElementById("dairy_all");
     if (x.checked) {
         if(!foodAllergies.includes(x.value)) {
@@ -373,6 +377,7 @@ async function updateMyInfo() {
     updateFoodAllergies();
     updateOtherAllergies();    
     updateMedicalConditions(); 
+    updateHealthInfo();
 
     console.log(foodAllergies);
     console.log(otherAllergies);
