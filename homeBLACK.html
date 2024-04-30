@@ -29,7 +29,6 @@
             font-size: 18px;
             text-align: left; /* Ensures the title is centered if needed */
         }
-
         .menu-item {
             display: flex;
             align-items: center;
@@ -40,9 +39,7 @@
             background-color: #333; /* Dark gray for the menu item cards */
             color: rgb(255, 255, 255); /* Light gray text for readability */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-        }
-        .menu-item span {
-            font-weight: 500;  /* Makes the text bold */
+            cursor: pointer;
         }
         .menu-item:hover {
             background-color: #444; /* Slightly darker on hover */
@@ -81,17 +78,24 @@
             justify-content: space-around;
             padding: 10px 0;
         }
+        .get-help {
+            border: 2px solid #8B0000;
+            background-color: #df072b;
+            transition: background-color 0.3s;
+        }
+        .get-help:hover {
+            background-color: #d82e4a;
+        }
         .bottom-menu div {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
         .bottom-menu img {
-             /* Invert colors for white icons */
+            /* Invert colors for white icons */
             width: 30px;
             height: 30px;
         }
-
         .not-active-icon {
             filter: brightness(0) invert(1);
         }
@@ -99,45 +103,87 @@
             margin: 0;
             font-size: 15px;
         }
-        a:link {
+        a:link, a:visited {
             color: white;
             background-color: transparent;
             text-decoration: none;
         }
-        a:active {
-            color: white;
-            background-color: transparent;
-            text-decoration: underline;
-        }
-        a:visited {
-            color: white;
-            background-color: transparent;
-            text-decoration: none;
-        }
-        a:hover {
+        a:hover, a:active {
             color: red;
             background-color: transparent;
             text-decoration: underline;
         }
-        .get-help {
-            border: 2px solid #8B0000; /* Dark red border */
-            background-color: #df072b; /* Light red background */
-            transition: background-color 0.3s; /* Smooth transition for hover effect */
-        }
-        /* Hover effect for Get Help button */
-        .get-help:hover {
-            background-color: #d82e4a; /* Slightly lighter red for hover */
-        }
-        .user-info {
-            font-size: 14px; /* Smaller font size for subtlety */
-            color: rgb(255, 255, 255); /* Lighter color for less emphasis */
-            margin-top: -18px; /* Adds a little space between this text and the safeID title */
-            text-align: left; /* Centers the text under the safeID title */
-        }
+        /* Popup Styling */
+        .popup {
+        display: none;
+        position: fixed; /* Position the popup relative to the viewport */
+        top: 50%; /* Center the popup vertically */
+        left: 50%; /* Center the popup horizontally */
+        transform: translate(-222%, -55%); /* Center the popup precisely */
+        width: 260px; /* Set the width of the popup */
+        background-color: #fff;
+        border: 2px solid #8B0000; /* Dark red border */
+        border-radius: 10px;
+        padding: 20px;
+        z-index: 9999; /* Ensure the popup appears above other content */
+        height: 180px;
+    }
 
-        .active p {
-            color: #197bd6; /* Light blue color for the text */
-        }
+    .popup-content {
+        text-align: center;
+    }
+
+    .close {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+        font-size: 20px;
+        color: #8B0000; /* Dark red color */
+    }
+
+    .rounded-input {
+        border-radius: 15px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        margin-top: 10px;
+        width: 80%;
+        box-sizing: border-box;
+        outline: none;
+        margin-bottom: 10px;
+        height: 18%;
+
+    }
+
+    .emergency-title {
+        color: #8B0000; /* Dark red color for emergency title */
+        margin-top: -6px;
+        font-size: 23px;
+        margin-bottom: 7px;
+
+
+    }
+
+    .emergency-info {
+        margin-top: 4px;
+        margin-bottom: 3px;
+        font-size: 20px;
+    }
+
+    .call-button {
+        background-color: #8B0000; /* Dark red background color */
+        color: #fff;
+        border: none;
+        padding: 10px 40px;
+        border-radius: 15px;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: background-color 0.3s; /* Smooth transition for hover effect */
+    }
+
+    .call-button:hover {
+        background-color: #df072b; /* Light red background color on hover */
+    }
     </style>
 </head>
 <body>
@@ -147,78 +193,81 @@
             <p class="user-info">Last ID update: April 3, 2024</p>
         </div>
         <div class="dropdown-container">
-            <!-- <select class="dropdown" id="region-dropdown">
-                <option value="">Select Country</option>
-                <option value="europe">Europe</option>
-                <option value="asia">Asia</option>
-                <option value="americas">Americas</option>
-                <option value="africa">Africa</option>
-                <option value="oceania">Oceania</option>
-            </select> -->
             <select class="dropdown" id="language-dropdown">
                 <option value="">Select Language</option>
                 <option value="english">English</option>
                 <option value="spanish">Spanish</option>
-                <option value="french">French</option>
+                <option value="french">French</option
                 <option value="german">German</option>
                 <option value="chinese">Chinese</option>
             </select>
         </div>
-
-        <a href = "restaurantid.html">
-            <div id = "restaruantid" class="menu-item" onclick="">
+        <a href="restaurantid.html">
+            <div class="menu-item">
                 <img src="imgs/fork.png" />
                 <span>Restaurant ID</span>
             </div>
         </a>
-        
-        <a href = "medicalid.html">
+        <a href="medicalid.html">
             <div class="menu-item">
                 <img src="imgs/circle (1).png" />
                 <span>Medical ID</span>
             </div>
         </a>
-
         <a href="my-info-dropdown.html">
             <div class="menu-item">
                 <img src="imgs/worldwide.png" />
                 <span>Edit Info (Variant 1)</span>
             </div>
         </a>
-
-
         <a href="my-info-multipage.html">
             <div class="menu-item">
                 <img src="imgs/worldwide.png" />
                 <span>Edit Info (Variant 2)</span>
             </div>
         </a>
-
-        <!-- <a href="my-info-multipage.html">
-            <div class="menu-item">
-                <img src="imgs/worldwide.png" />
-                <span>Edit Info (Variant 3)</span>
-            </div>
-        </a> -->
-
-        <div class="menu-item get-help">
+        <div class="menu-item get-help" onclick="showPopup()">
             <img src="imgs/Phone-Dark.ico" />
             <span>Emergency Assistance</span>
         </div>
         <div class="bottom-menu">
             <div>
-                <a href="my-info.html"><img class = "not-active-icon" src="imgs/My-Info-Dark.ico" /></a>
+                <a href="my-info.html"><img class="not-active-icon" src="imgs/My-Info-Dark.ico" /></a>
                 <p>My Info</p>
             </div>
             <div class="active">
-              <a href = "homeBLACK.html"><img src="imgs/building.png" /></a>
-              <p>Home</p>
+                <a href="homeBLACK.html"><img src="imgs/building.png" /></a>
+                <p>Home</p>
             </div>
             <div>
-                <img class = "not-active-icon" src="imgs/More-Menu-Dark.ico" />
+                <a href="more.html"><img class="not-active-icon" src="imgs/More-Menu-Dark.ico" /></a>
                 <p>More</p>
             </div>
-          </div>
+        </div>
     </div>
+    <!-- Emergency Assistance Popup -->
+    <div id="emergency-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h3 class="emergency-title">Emergency Assistance</h3>
+            <input type="text" placeholder="Search location..." id="location-search" class="rounded-input">
+            <p class="emergency-info">All emergency response: <b>911</b></p>
+
+            <button class="call-button">Call Now</button>
+        </div>
+    </div>
+    <script>
+        function showPopup() {
+            document.getElementById('emergency-popup').style.display = 'flex';
+        }
+        function closePopup() {
+            document.getElementById('emergency-popup').style.display = 'none';
+        }
+        window.onclick = function(event) {
+            if (event.target === document.getElementById('emergency-popup')) {
+                closePopup();
+            }
+        }
+    </script>
 </body>
 </html>

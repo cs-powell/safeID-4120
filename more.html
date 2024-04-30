@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Settings - SafeID</title>
+    <link rel="stylesheet" href="master-styles.css" />
+    <script src="edit-my-info.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Helvetica', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .phone-container {
+            width: 350px;
+            height: 700px;
+            border-radius: 10px;
+            background-color: #000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            overflow: auto;
+            color: #ccc;
+        }
+        .header {
+            background-color: #000;
+            color: white;
+            padding: 20px;
+            font-size: 18px;
+            text-align: left;
+        }
+        .settings-container {
+            padding: 20px;
+            color: #fff;
+        }
+        .settings-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .label-text {
+            display: block;
+            color: #fff;
+            font-size: 22px;
+        }
+        .checkbox {
+    position: relative;
+    width: 40px; /* Set a specific width to contain the checkbox */
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee; /* Light gray background for visibility */
+    border-radius: 5px;
+}
+
+.checkbox:hover input ~ .checkmark {
+    background-color: #ccc; /* Slightly darker on hover */
+}
+
+.checkbox input:checked ~ .checkmark {
+    background-color: #2196F3; /* Blue background when checked */
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.text-size {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.text-size.small { font-size: 12px; }
+.text-size.medium { font-size: 20px; }
+.text-size.large { font-size: 28px; }
+
+.info-icon {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            line-height:12px;
+            border-radius: 50%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            font-style: italic;
+            font-size: 8px;
+            cursor: pointer;
+            position: relative;
+            margin-left: -110px;
+        }
+
+        .info-icon:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            left: 110%; /* Adjust based on actual layout */
+            top: 50%;
+            transform: translateY(-50%);
+            white-space: nowrap;
+            z-index: 1000;
+            background-color: #333;
+            color: #fff;
+            padding: 5px 8px;
+            border-radius: 5px;
+            font-size: 12px;
+            width: max-content;
+            max-width: 200px; /* Prevent too wide tooltips */
+        }
+.checkbox .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+.dropdown {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    width: calc(100% - 100px); /* Reduced width by additional 40px */
+    margin-left: 40px; /* Added margin to push dropdown to the right */
+}
+
+        .bottom-menu {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #1a1a1a;
+            color: #ccc;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+        }
+        .bottom-menu div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .bottom-menu img {
+            width: 30px;
+            height: 30px;
+        }
+        .not-active-icon {
+            filter: brightness(0) invert(1);
+        }
+    </style>
+</head>
+<body>
+    <div class="phone-container">
+        <div class="header">
+            <h1>Settings</h1>
+            <p class="user-info">Last ID update: April 3, 2024</p>
+        </div>
+        <div class="settings-container">
+            <div class="settings-item">
+                <span class="label-text">Default:</span>
+                <select class="dropdown" id="language-dropdown">
+                    <option value="english">English</option>
+                    <option value="spanish">Spanish</option>
+                    <option value="french">French</option>
+                    <option value="german">German</option>
+                    <option value="chinese">Chinese</option>
+                </select>
+            </div>
+            <div class="settings-item">
+                <span class="label-text">Enable Notifications:</span>
+                <label class="checkbox">
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                </label>
+
+            </div>
+            <div class="settings-item">
+                <span class="label-text">Dark Mode:</span>
+                <label class="checkbox">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="settings-item">
+                <span class="label-text" style="margin-right:2px;">No Data Mode</span>
+                <span class="info-icon" data-tooltip="Allows offline usage">i</span>
+                <label class="checkbox">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="settings-item">
+                <span class="label-text">Text Size:</span>
+                <div>
+                    <button class="text-size small">Aa</button>
+                    <button class="text-size medium">Aa</button>
+                    <button class="text-size large">Aa</button>
+                </div>
+            </div>
+            <div class="settings-item">
+                <span class="label-text" style="margin-right:-15px;">Auto-update</span>
+                <span class="info-icon" data-tooltip="Automatically install updates">i</span>
+
+                <label class="checkbox">
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="settings-item">
+                <span class="label-text">Privacy Mode </span>
+                <span class="info-icon" data-tooltip="Blur data when not in use">i</span>
+                <label class="checkbox">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            
+        </div>
+        <div class="bottom-menu">
+            <div>
+                <a href="my-info.html"><img class="not-active-icon" src="imgs/My-Info-Red.ico" /></a>
+                <p>My Info</p>
+            </div>
+            <div class="not-active-icon">
+              <a href="homeBLACK.html"><img src="imgs/building.png" /></a>
+              <p>Home</p>
+            </div>
+            <div class="active">
+                <img src="imgs/More-Menu-Dark.ico" />
+                <p>More</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

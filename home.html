@@ -185,7 +185,80 @@ a:hover {
   background-color: transparent;
   text-decoration: underline;
 }
+/* Popup Styling */
+.popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+}
+
+.close {
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 25px;
+}
+
+.call-button {
+    background-color: #ff4d4d;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    text-transform: uppercase;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
     </style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var emergencyBtn = document.querySelector('.menu-item span:contains("Get Help")');
+        var popup = document.getElementById('emergency-popup');
+        var closeBtn = document.querySelector('.close');
+    
+        emergencyBtn.addEventListener('click', function() {
+            popup.style.display = 'block';
+        });
+    
+        closeBtn.addEventListener('click', function() {
+            popup.style.display = 'none';
+        });
+    
+        window.onclick = function(event) {
+            if (event.target == popup) {
+                popup.style.display = 'none';
+            }
+        }
+    });
+    </script>
+    
 </head>
 <body>
     <div class="phone-container">
