@@ -17,14 +17,7 @@
   };
   </script> -->
 <div class="phone-container">
-  <div class="header">
-    <h1>Medical ID</h1>
-    <p class="user-info">Last ID update: April 3, 2024</p>
-    <p class ="prompt">Hover mouse over image below to flip card</p>
-  </div>
 
-
-  
   <div class="flip-card" >
     <div class="flip-card-inner">
       <div id ="medical" class="flip-card-front"  >
@@ -39,50 +32,50 @@
           <!-- <img src="imgs/Home-Dark.png" alt="Icon" style="width:300px;height:300px;"> -->
           <!-- <img class = "one" src="imgs/peanut.jpeg" alt ="Dairy"> -->
           <h1 class ="two" >Irritable Bowel Syndrome</h1>
-          <img class = "entry-info-button" src="imgs/info.png" alt ="info button">
+          <img class = "entry-info-button" src="imgs/left arrow.webp" alt ="info button">
         </div>
 
         <div class = "entry"> 
           <!-- <img src="imgs/Home-Dark.png" alt="Icon" style="width:300px;height:300px;"> -->
           <!-- <img class = "one" src="imgs/peanut.jpeg" alt ="Dairy"> -->
           <h1 class ="two" >Arthritis</h1>
-          <img class = "entry-info-button" src="imgs/info.png" alt ="info button">
+          <img class = "entry-info-button" src="imgs/left arrow.webp" alt ="info button">
         </div>
 
         <div class = "entry"> 
           <!-- <img src="imgs/Home-Dark.png" alt="Icon" style="width:300px;height:300px;"> -->
           <!-- <img class = "one" src="imgs/peanut.jpeg" alt ="Dairy"> -->
           <h1 class ="two" >Diabetes</h1>
-          <img class = "entry-info-button" src="imgs/info.png" alt ="info button">
+          <img class = "entry-info-button" src="imgs/left arrow.webp" alt ="info button">
         </div>
 
         <div class = "headerblock"> 
-          <h1 class ="four" >Allergy</h1>
+          <h1 class ="four" >Allergies</h1>
         </div>
 
         <div class = "entry"> 
           <!-- <img src="imgs/Home-Dark.png" alt="Icon" style="width:300px;height:300px;"> -->
           <!-- <img class = "one" src="imgs/peanut.jpeg" alt ="Dairy"> -->
           <h1 class ="two" >Bee Stings</h1>
-          <img class = "entry-info-button" src="imgs/info.png" alt ="info button">
+          <img class = "entry-info-button" src="imgs/left arrow.webp" alt ="info button">
         </div>
 
         <div class = "headerblock"> 
-          <h1 class ="four" >Other Information </h1>
+          <h1 class ="four" >Supplementary Information</h1>
         </div>
 
         <div class = "entry"> 
           <!-- <img src="imgs/Home-Dark.png" alt="Icon" style="width:300px;height:300px;"> -->
           <!-- <img class = "one" src="imgs/peanut.jpeg" alt ="Dairy"> -->
           <h1 class ="two" >Carries Insulin</h1>
-          <img class = "entry-info-button" src="imgs/info.png" alt ="info button">
+          <img class = "entry-info-button" src="imgs/left arrow.webp" alt ="info button">
         </div>
 
         <div class = "entry"> 
           <!-- <img src="imgs/Home-Dark.png" alt="Icon" style="width:300px;height:300px;"> -->
           <!-- <img class = "one" src="imgs/peanut.jpeg" alt ="Dairy"> -->
           <h1 class ="two" >Service Dog</h1>
-          <img class = "entry-info-button" src="imgs/info.png" alt ="info button">
+          <img class = "entry-info-button" src="imgs/left arrow.webp" alt ="info button">
         </div>
 
 
@@ -113,6 +106,29 @@
 
       </div>
     </div>
+  </div>
+
+  <div class="header">
+
+    <div class = "left-header">
+        <h1>Medical ID</h1>
+      <p id = "MedicalUpdateTime" class="user-info"></p>
+      <script>
+        // Get current date and time
+        var now = new Date();
+        var datetime = now.toDateString();
+      
+        // Insert date and time into HTML
+        document.getElementById("MedicalUpdateTime").innerHTML = "Last Update: " + datetime;
+      </script>
+
+    </div>
+      
+    <div class = "right-header">
+      <button class="toggle"> Translate </button>
+    </div>
+    
+
   </div>
 
   <div class="bottom-menu">
